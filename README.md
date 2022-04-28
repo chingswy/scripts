@@ -13,3 +13,15 @@ ps -ef | grep train | grep -v grep | awk '{print $2}' | xargs kill -9
 ```bash
 
 ```
+
+### ffmpeg
+
+拼接视频:
+```bash
+ffmpeg -i a.mp4 -i b.mp4 -filter_complex hstack c.mp4
+```
+
+补全视频
+```bash
+ffmpeg -y -i input.mp4 -vf "scale=1080:1080,pad=1920:1080:420:420:white" padding.mp4
+```
