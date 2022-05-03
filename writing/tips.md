@@ -8,3 +8,5 @@
 8. `to` 后面检查一下动词形式
 9. `L2 regulation` -> `L2 regularization`
 10. Thus前面不要加逗号,直接另起一句
+11. `mannually` -> `manually`
+12. 注意检查名词缩写
