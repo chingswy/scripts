@@ -25,3 +25,9 @@ ffmpeg -i a.mp4 -i b.mp4 -filter_complex hstack c.mp4
 ```bash
 ffmpeg -y -i input.mp4 -vf "scale=1080:1080,pad=1920:1080:420:420:white" padding.mp4
 ```
+
+从视频生成GIF
+
+```bash
+ffmpeg -r 30 -i 23EfsN7vEOA+003170+003670.mp4 -vf scale="iw/3:ih/3" -r 15 demo.gif
+```
