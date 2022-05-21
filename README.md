@@ -10,8 +10,9 @@ ps -ef | grep train | grep -v grep | awk '{print $2}' | xargs kill -9
 
 ### 压缩pdf文件
 
-```bash
+[pdf转图片](https://zhuanlan.zhihu.com/p/397600837)
 
+```bash
 ```
 
 ### ffmpeg
