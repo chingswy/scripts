@@ -1,0 +1,28 @@
+hstack() {
+    if [ "$#" -ne 3 ]; then
+        echo "Usage: vstack video1.mp4 video2.mp4 output.mp4"
+        return 1
+    fi
+    ffmpeg -i "$1" -i "$2" -filter_complex \
+    "[0:v][1:v]hstack=inputs=2[v]; \
+    [0:a][1:a]amix=inputs=2:duration=longest[a]" \
+    -map "[v]" -map "[a]" \
+    -c:v libx264 -crf 23 -preset fast \
+    -c:a aac -b:a 192k \
+    "$3"
+}
+
+vstack() {
+    if [ "$#" -ne 3 ]; then
+        echo "Usage: vstack video1.mp4 video2.mp4 output.mp4"
+        return 1
+    fi
+    ffmpeg -i "$1" -i "$2" -filter_complex \
+    "[0:v][1:v]vstack=inputs=2[v]; \
+    [0:a][1:a]amix=inputs=2:duration=longest[a]" \
+    -map "[v]" -map "[a]" \
+    -c:v libx264 -crf 23 -preset fast \
+    -c:a aac -b:a 192k \
+    "$3"
+}
+
